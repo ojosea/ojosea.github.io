@@ -240,79 +240,79 @@
       </div>
     </div>
   </div>
+<script>
+  let totalValue = 0;
 
-  <script>
-    let totalValue = 0;
-
-function formatNumberWithComma(number) {
-  return number.toLocaleString('pt-BR', { minimumFractionDigits: 2 });
-}
-
-function addToCart(productNode) {
-  // Obter dados do produto do nó
-  const productName = productNode.querySelector('h3').textContent;
-  const productPrice = parseFloat(productNode.dataset.price);
-
-  // Adicionar produto ao carrinho
-  const cartList = document.getElementById('cartList');
-  const cartItem = document.createElement('li');
-  cartItem.textContent = `${productName} - R$ ${formatNumberWithComma(productPrice)}`;
-  
-  // Adicionar botão de remover ao item do carrinho
-  const removeButton = document.createElement('button');
-  removeButton.textContent = 'Remover';
-  removeButton.onclick = function() {
-    removeFromCart(cartItem, productPrice);
-  };
-  cartItem.appendChild(removeButton);
-
-  cartList.appendChild(cartItem);
-
-  // Somar ao valor total do carrinho
-  totalValue += productPrice;
-
-  // Atualizar o valor total exibido
-  const totalValueElement = document.getElementById('totalValue');
-  totalValueElement.textContent = `Total: R$ ${formatNumberWithComma(totalValue)}`;
-}
-
-function removeFromCart(cartItem, productPrice) {
-  // Remover item do carrinho
-  cartItem.remove();
-
-  // Subtrair do valor total do carrinho
-  totalValue -= productPrice;
-
-  // Atualizar o valor total exibido
-  const totalValueElement = document.getElementById('totalValue');
-  totalValueElement.textContent = `Total: R$ ${formatNumberWithComma(totalValue)}`;
-}
-
-function payWithPix() {
-  // Substitua 'SuaChavePixAqui' pela sua chave Pix
-  const pixKey = '32999351144';
-
-  // Exibir chave Pix e valor total para pagamento
-  const paymentInfo = `Chave Pix: ${pixKey}\nTotal: R$ ${formatNumberWithComma(totalValue)}`;
-  alert(paymentInfo);
-}
-
-function openWhatsApp() {
-  // Substitua 'SeuLinkDoWhatsAppAqui' pelo seu link do WhatsApp
-  const whatsappLink = 'https://wa.me/5532999351144?text=vim do site +quero+fazer+uma+encomenda';
-  window.open(whatsappLink, '_blank');
-}
-
-function searchProduct() {
-  const searchTerm = searchInput.value.toLowerCase();
-  const productItems = productList.getElementsByTagName('li');
-
-  for (let productItem of productItems) {
-    const productName = productItem.dataset.name.toLowerCase();
-    const isVisible = productName.includes(searchTerm);
-
-    // Exibir ou ocultar o item com base na correspondência do termo de pesquisa
-    productItem.style.display = isVisible ? 'block' : 'none';
+  function formatNumberWithComma(number) {
+    return number.toLocaleString('pt-BR', { minimumFractionDigits: 2 });
   }
-}
-    <script/>
+
+  function addToCart(productNode) {
+    // Obter dados do produto do nó
+    const productName = productNode.querySelector('h3').textContent;
+    const productPrice = parseFloat(productNode.dataset.price);
+
+    // Adicionar produto ao carrinho
+    const cartList = document.getElementById('cartList');
+    const cartItem = document.createElement('li');
+    cartItem.textContent = `${productName} - R$ ${formatNumberWithComma(productPrice)}`;
+
+    // Adicionar botão de remover ao item do carrinho
+    const removeButton = document.createElement('button');
+    removeButton.textContent = 'Remover';
+    removeButton.onclick = function() {
+      removeFromCart(cartItem, productPrice);
+    };
+    cartItem.appendChild(removeButton);
+
+    cartList.appendChild(cartItem);
+
+    // Somar ao valor total do carrinho
+    totalValue += productPrice;
+
+    // Atualizar o valor total exibido
+    const totalValueElement = document.getElementById('totalValue');
+    totalValueElement.textContent = `Total: R$ ${formatNumberWithComma(totalValue)}`;
+  }
+
+  function removeFromCart(cartItem, productPrice) {
+    // Remover item do carrinho
+    cartItem.remove();
+
+    // Subtrair do valor total do carrinho
+    totalValue -= productPrice;
+
+    // Atualizar o valor total exibido
+    const totalValueElement = document.getElementById('totalValue');
+    totalValueElement.textContent = `Total: R$ ${formatNumberWithComma(totalValue)}`;
+  }
+
+  function payWithPix() {
+    // Substitua 'SuaChavePixAqui' pela sua chave Pix
+    const pixKey = '32999351144';
+
+    // Exibir chave Pix e valor total para pagamento
+    const paymentInfo = `Chave Pix: ${pixKey}\nTotal: R$ ${formatNumberWithComma(totalValue)}`;
+    alert(paymentInfo);
+  }
+
+  function openWhatsApp() {
+    // Substitua 'SeuLinkDoWhatsAppAqui' pelo seu link do WhatsApp
+    const whatsappLink = 'https://wa.me/5532999351144?text=vim do site +quero+fazer+uma+encomenda';
+    window.open(whatsappLink, '_blank');
+  }
+
+  function searchProduct() {
+    const searchTerm = searchInput.value.toLowerCase();
+    const productItems = productList.getElementsByTagName('li');
+
+    for (let productItem of productItems) {
+      const productName = productItem.dataset.name.toLowerCase();
+      const isVisible = productName.includes(searchTerm);
+
+      // Exibir ou ocultar o item com base na correspondência do termo de pesquisa
+      productItem.style.display = isVisible ? 'block' : 'none';
+    }
+  }
+</script>
+  
