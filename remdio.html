@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Calculadora de remedio via solo</title>
+<link rel="stylesheet" href="remedio.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Calculadora de remedio via solo</h1>
+    <form id="adubacaoForm">
+      <label for="quantidadePes">Quantidade de pés:</label>
+      <input type="number" id="quantidadePes" placeholder="Digite a quantidade de pés" required>
+
+      <label for="dosePorPlanta">Dose por planta (ml):</label>
+      <input type="number" id="dosePorPlanta" placeholder="Digite a dose por planta" required>
+
+      <label for="dosePorBomba">Dose por bomba (g/ml):</label>
+      <input type="number" id="dosePorBomba" placeholder="Digite a dose por bomba" required>
+
+      <label for="valorProduto">Valor do produto (R$):</label>
+      <input type="number" id="valorProduto" placeholder="Digite o valor do produto" required>
+
+<label for="quantidadeProduto">Quantidade do produto (kg/L):</label>
+<input type="number" id="quantidadeProduto" placeholder="Digite a quantidade do produto" required>
+      <button type="button" onclick="calcular()">Calcular</button>
+    </form>
+
+    <div id="resultado"></div>
+  </div>
+
+  <script src="remedio.js"></script>
+</body>
+</html>

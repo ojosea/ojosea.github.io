@@ -1,0 +1,44 @@
+body {
+    background-color: #f0f0f0; /* cor de fundo do corpo */
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #fff; /* cor de fundo do container */
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* sombra suave */
+}
+
+h1 {
+    color: #333; /* cor do título */
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    color: #333; /* cor do texto dos rótulos */
+}
+
+input[type="number"] {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    border: 1px solid #ccc; /* cor da borda dos campos de entrada */
+}
+
+#resultado {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #e0f7fa; /* cor de fundo do resultado */
+    border-radius: 5px;
+    border: 1px solid #26a69a; /* cor da borda do resultado */
+    color: #333; /* cor do texto do resultado */
+}

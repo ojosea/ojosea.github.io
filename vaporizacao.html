@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Pulverização</title>
+    <link rel="stylesheet" href="vaporizacao.css">
+</head>
+<body>
+    <h1>Calculadora de Pulverização</h1>
+    <form id="pulverizationForm">
+        <label for="plantsPerHectare">Quantidade de plantas por hectare:</label>
+        <input type="number" id="plantsPerHectare" required><br>
+        
+        <label for="area">Área em hectares:</label>
+        <input type="number" id="area" required><br>
+        
+        <label for="dosePerPlant">Dose por planta (em ml):</label>
+        <input type="number" id="dosePerPlant" step="0.01" required><br>
+        
+        <label for="pumpCapacity">Capacidade da bomba (em litros):</label>
+        <input type="number" id="pumpCapacity" step="0.01" required><br>
+
+        <label for="dosePerPump">Dose por bomba (ml):</label>
+        <input type="number" id="dosePerPump" step="0.01" required><br>
+
+        <label for="productPrice">Preço do produto (por litro ou kg):</label>
+        <input type="number" id="productPrice" step="0.01" required><br>
+
+        <label for="priceUnit">Unidade de preço:</label>
+        <select id="priceUnit">
+            <option value="litro">Litro</option>
+            <option value="kg">Quilograma</option>
+        </select><br>
+        
+        <button type="button" onclick="calculate()">Calcular</button>
+    </form>
+
+    <div id="result" style="display:none;">
+        <h2>Resultados:</h2>
+        <p id="totalBombs"></p>
+        <p id="totalLiters"></p>
+        <p id="totalProduct"></p>
+        <p id="pumpValue"></p>
+        <p id="totalValue"></p>
+    </div>
+
+    <script src="vaporizacao.js"></script>
+</body>
+</html>

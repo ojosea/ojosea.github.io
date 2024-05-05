@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Calculadora de Adubação</title>
+<link rel="stylesheet" href="adubacao.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Calculadora de Adubação</h1>
+    <label for="pes">Número de pés:</label>
+    <input type="number" id="pes" placeholder="Digite o número de pés" oninput="calcularAdubacao()">
+    
+    <label for="gemasPorPe">Número de gemas jogadas por pé:</label>
+    <input type="number" id="gemasPorPe" placeholder="Digite o número de gemas por pé" oninput="calcularAdubacao()">
+    
+    <label for="valorSaco">Valor do saco de adubo (R$):</label>
+    <input type="number" id="valorSaco" placeholder="Digite o valor do saco" oninput="calcularAdubacao()">
+    
+    <label for="numAdubacoes">Número de adubações desejadas:</label>
+    <input type="number" id="numAdubacoes" placeholder="Digite o número de adubações" oninput="calcularAdubacao()">
+    
+    <div id="resultado"></div>
+  </div>
+<script src="adubacao.js"></script>
+</body>
+</html>
