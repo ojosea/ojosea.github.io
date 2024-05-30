@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-image: url('https://i.imgur.com/oUjnlzC.jpeg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+    .title {
+      text-align: center;
+    }
+    .title h1 {
+      color: #000;
+      font-family: 'Georgia', serif;
+      text-shadow: 2px 2px 4px #555, 0 0 10px #fff;
+    }
+    .container {
+      max-width: 350px;
+      margin: 20px auto;
+      padding: 20px;
+      border-radius: 5px;
+    }
+    .header {
+      text-align:center;
+      margin-top: 3px;
+      margin-bottom:50px;
+      text-align: center;
+      background-color:#3498db;
+      box-shadow: 0 0 5px rgba(0, 128, 0, 0.9);
+      padding: 5px;
+      border-radius: 10px;
+    }
+    p {
+      color: #000000;
+      font-size:20px;
+      margin-bottom: 0px; 
+      font-family: 'Baskerville',sans-serif;
+    }
+    .search-container {
+      margin-top: 15px;
+      text-align: center;
+      background-color: #C0C0D0;
+      box-shadow: 0 0 2px rgba(0, 0, 0, 1);
+      padding: 8px;
+      border-radius: 10px;
+    }
+    #searchInput {
+      padding: 10px;
+      border-radius: 20px;
+      width: 90%;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.9);
+    }
+    .product-list {
+      background-color: transparent;
+      border-radius: 2px;
+      padding: 0;
+      list-style-type: none;
+    }
+    .product-list li {
+      margin-bottom: 10px;
+      padding: 5px;
+      box-shadow: 0 0 0 rgba(0, 0, 0, 0.1);
+      border-radius: 10px;
+      background-color: rgba(255, 255, 255, 0.8);
+      transition: transform 0.2s ease-in-out;
+    }
+    .product-list li img {
+      max-width: 90%;
+      height: auto;
+      display: block;
+      margin: 0 auto;
+      border-radius: 10px;
+    }
+    .product-list li h3 {
+      margin-bottom: 10px;
+    }
+    .product-list li p {
+      color: #;
+      margin-bottom: 5px;
+    }
+    .product-list li:hover {
+      transform: scale(1.05);
+      border: 4px solid #708090;
+    }
+    .cart {
+      margin-top: 10px;
+      text-align: center;
+      padding: 15px;
+      background-color: #4169E1;
+      box-shadow: 0 0 30px rgba(0, 0, 0, 1);
+      border-radius: 20px;
+    }
+    button {
+      cursor: pointer;
+      background-color: #ff0000;
+      color: #fff;
+      border: none;
+      padding: 10px 10px;
+      border-radius: 5px;
+      font-size: 19px;
+      margin: 5px;
+      box-shadow: 0px 0px 12px rgba(0, 0, 0, 1);
+    }
+    .whatsapp-button button {
+      cursor: pointer;
+      background-color: #27ae60;
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      font-size: 16px;
+      box-shadow: 0 0 40px rgba(0, 0, 255, 0.8);
+      margin: 10px;
+    }
+    .whatsapp-button button:active {
+      background-color: #003366;
+    }
+    .pix-button button {
+      cursor: pointer;
+      background-color: #FFD700;
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      font-size: 16px;
+      box-shadow: 0 0 10px rgba(0, 0, 255, 0.9);
+      margin: 10px;
+    }
+    .pix-button button:active {
+      background-color: #003366;
+    }
+    .whatsapp-button button:hover {
+      background-color: #27ae60;
+    }
+    footer {
+      margin-top: 20px;
+      padding: 10px;
+      text-align: center;
+      background-color:#333;
+      color: #fff;
+      border-radius: 5px;
+    }
+    footer p {
+      margin: 0;
+    }
+  </style>
+  <title>Loja Virtual</title>
+</head>
+<body>
+  <div class="title">
+    <h1>Loja zé do agro🌿 </h1>
+  </div>
+  <div class="container">
+    <div class="header">
+      <p>Busque seu produto aqui</p>
+      <div class="search-container">
+        <input type="text" id="searchInput" oninput="searchProduct()" placeholder="Pesquisar...">
+      </div>
+    </div>
+
+    <ul id="productList" class="product-list">
+      <!-- Produtos fictícios diretamente no HTML -->
+      <li data-name="Vareta cardan" data-price="37">
+        <img src="https://i.imgur.com/P0Satip.png" alt="Vareta">
+        <h3>Vareta</h3>
+        <p>Price: R$ 37,00</p>
+        <button onclick="addToCart(this.parentNode)">🛒 Adicionar ao carrinho</button>
+      </li>
+      <li data-name="Rolamento" data-price="10">
+        <img src="https://i.imgur.com/AaPt99t.jpeg" alt="Rolamento">
+        <h3>Rolamento</h3>
+        <p>Price: R$ 10,00</p>
+        <button onclick="addToCart(this.parentNode)">🛒 Adicionar ao carrinho</button>
+      </li>
+      <li data-name="dedo | dedos | par de dedo" data-price="75">
+        <img src="https://i.imgur.com/jOZJlb8.png" alt="dedo">
+        <h3>par de dedo</h3>
+        <p>Price: R$ 75,00</p>
+        <button onclick="addToCart(this.parentNode)">🛒 Adicionar ao carrinho</button>
+      </li>
+      <li data-name="husquanar226k maquina" data-price="1300">
+        <img src="https://i.imgur.com/Q76WRpd.jpeg" alt="maquina">
+        <h3>hurquarna226k</h3>
+        <p>Preço: R$ 1.300,00</p>
+        <button onclick="addToCart(this.parentNode)">🛒 Adicionar ao carrinho</button>
+      </li>
+      <li data-name="Mão ags | mao |mão" data-price="800">
+        <img src="https://i.imgur.com/Jn9xAco.png" alt="mao ags">
+        <h3>mão ags</h3>
+        <p>Preço: R$800,00</p>
+        <button onclick="addToCart(this.parentNode)">🛒 Adicionar ao carrinho</button>
+      </li>
+      <li data-name="pano |pano de 12metro " data-price="220">
+        <img src="https://i.imgur.com/a3ggFtE.png" alt="pano">
+        <h3>par de pano</h3>
+        <p>Price: R$ 220,00</p>
+        <button onclick="addToCart(this.parentNode)">🛒 Adicionar ao carrinho</button></li>
+        <li data-name="tabor de mbreagem | tabor" data-price="20">
+        <img src="https://i.imgur.com/ZCw1EOc.png" alt="#">
+        <h3>tabor de embreagem</h3>
+        <p>Preço: R$ 20,00</p>
+        <button onclick="addToCart(this.parentNode)">🛒 Adicionar ao carrinho</button>
+      </li>
+      <li data-name="embragemembragem | embreagem de maquina | embragem completa" data-price="20">
+        <img src="https://i.imgur.com/AunssE8.png" alt="embragem">
+        <h3>embragem</h3>
+        <p>Preço: R$ 20,00</p>
+        <button onclick="addToCart(this.parentNode)">🛒 Adicionar ao carrinho</button>
+      </li>
+      <li data-name="rolamento|rolamentos|rolamento do dedo" data-price="20">
+        <img src="https://i.imgur.com/2rsz7Lm.png" alt="#">
+        <h3>rolamentos do dedo</h3>
+        <p>Preço: R$ 20,00</p>
+        <button onclick="addToCart(this.parentNode)">🛒 Adicionar ao carrinho</button>
+      </li>
+      <li data-name="biela da mao|biela" data-price="90">
+        <img src="https://i.imgur.com/6rOxEFw.png" alt="biela">
+        <h3>biela da mao</h3>
+        <p>Preço: R$ 90,00</p>
+        <button onclick="addToCart(this.parentNode)">🛒 Adicionar ao carrinho</button>
+      </li>
+    </ul>
+
+    <div id="cart" class="cart">
+      <h2>Carrinho</h2>
+      <ul id="cartList"></ul>
+      <p id="totalValue">Total: R$ 0.00</p>
+      <div class="pix-button">
+        <button onclick="payWithPix()">💰 cheve Pix</button>
+      </div>
+      <div class="whatsapp-button">
+        <button onclick="openWhatsApp()">📞 fazer a encomenda via WhatsApp</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    let totalValue = 0;
+
+    function formatNumberWithComma(number) {
+      return number.toLocaleString('pt-BR', { minimumFractionDigits: 2 });
+    }
+
+    function addToCart(productNode) {
+      const productName = productNode.querySelector('h3').textContent;
+      const productPrice = parseFloat(productNode.dataset.price);
+
+      const cartList = document.getElementById('cartList');
+      const cartItem = document.createElement('li');
+      cartItem.textContent = `${productName} - R$ ${formatNumberWithComma(productPrice)}`;
+
+      const removeButton = document.createElement('button');
+      removeButton.textContent = 'Remover';
+      removeButton.onclick = function() {
+        removeFromCart(cartItem, productPrice);
+      };
+      cartItem.appendChild(removeButton);
+
+      cartList.appendChild(cartItem);
+
+      totalValue += productPrice;
+
+      const totalValueElement = document.getElementById('totalValue');
+      totalValueElement.textContent = `Total: R$ ${formatNumberWithComma(totalValue)}`;
+    }
+
+    function removeFromCart(cartItem, productPrice) {
+      cartItem.remove();
+
+      totalValue -= productPrice;
+
+      const totalValueElement = document.getElementById('totalValue');
+      totalValueElement.textContent = `Total: R$ ${formatNumberWithComma(totalValue)}`;
+    }
+
+    function payWithPix() {
+      const pixKey = '32999351144';
+      const paymentInfo = `Chave Pix: ${pixKey}\nTotal: R$ ${formatNumberWithComma(totalValue)}`;
+      alert(paymentInfo);
+    }
+
+    function openWhatsApp() {
+      const whatsappLink = 'https://wa.me/5532999351144?text=v
